@@ -124,6 +124,14 @@ Executes constructor function with ```$injector.instantiate```, the ```new``` op
   BookAppLogger.prototype = Object.create(LoggerBase.protytype);
   
 }());
+
+// how to use it
+
+function BooksController($scope, dataService, logger) {
+  $scope.allBooks = dataService.getAllBooks;
+  logger.output('logging...');
+}
+
 ```
 
 

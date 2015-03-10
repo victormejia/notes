@@ -76,10 +76,55 @@ This creates a ```booksProvider```. ```$get``` gets called to create a service.
 Use it when additional config is unncessary. Internally, it calls the provider
 function to register a factory function that will return a service instance. The factory
 function is set as the ```$get``` value.
+```JavaScript
+(function () {
+
+  angular.module('app')
+    .factory('dataService', dataService);
+    
+  function dataService() {
+    return {
+      getAllBooks: getAllBooks,
+      getAllReaders: getAllReaders
+    }
+  }
+
+}());
+
+// how to use it
+
+function BooksController($scope, dataService) {
+  $scope.allBooks = dataService.getAllBooks
+}
+```
 
 ## ```$provide.service()```
-
 Calls factory function, which calls provider funciton. Treats function as a constructor.
 Executes constructor function with ```$injector.instantiate```, the ```new``` operator.
+```JavaScript
+(function () {
+  
+  angular.module('app')
+    .service('logger', BookAppLogger);
+  
+  function LoggerBase() {}
+  
+  LoggerBase.prototype.output = function (message) {
+    console.log('LoggerBase: ' + message);
+  }l
+  
+  function BookAppLogger() {
+    LoggerBase.call(this);
+    
+    this.logBook = function (book) {
+      console.log('Book: ' + book.title);
+    }
+  }
+  
+  BookAppLogger.prototype = Object.create(LoggerBase.protytype);
+  
+}());
+```
+
 
   

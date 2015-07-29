@@ -8,11 +8,11 @@
   justify-content: flex-start | flex-end | center | space-between | space-around
 }
 ```
-`flex-start`: default, start of flex container
-`flex-end`
-`center`: no margin tricks
-`space-between`: divvy up the space between elements
-`space-around`: takes into account space on left and right
+  * `flex-start`: default, start of flex container
+  * `flex-end`
+  * `center`: no margin tricks
+  * `space-between`: divvy up the space between elements
+  * `space-around`: takes into account space on left and right
 
 vertical center in flexbox
 

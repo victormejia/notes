@@ -34,9 +34,24 @@ vertical center in flexbox
   align-items: stretch | center | flex-start | flex-end | baseline;
   height: 100vh;
 }
+```
 
   * `baseline`: along the bottom of the text
   * `stretch`: default, all of the containing element
   * `center`: vertical center
   * `flex-start`: at the top
   * `flex-end`: at the bottom
+
+## Video 8: Flexbox Alignment - Centering with `align-content`
+
+### `align-content`: similar to `justify-content`, but along takes care of the extra space along the cross axis
+
+```CSS
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  width: 33%;
+}
